@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Portal do Cidadão V2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <!-- Área de Login (Lado Esquerdo) -->
+            <div class="login-section">
+                <!-- Header da Seção de Login -->
+                <div class="login-header">
+                    <h1>Entrar</h1>
+                    
+                    <!-- Abas de Níveis -->
+                    <div class="level-tabs">
+                        <button class="tab-btn active" data-level="1">
+                            <span class="tab-number">1</span>
+                            <span class="tab-text">Nível 1</span>
+                        </button>
+                        <button class="tab-btn" data-level="2">
+                            <span class="tab-number">2</span>
+                            <span class="tab-text">Nível 2</span>
+                        </button>
+                        <button class="tab-btn" data-level="3">
+                            <span class="tab-number">3</span>
+                            <span class="tab-text">Nível 3</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Conteúdo dos Formulários -->
+                <div class="form-content">
+                    <!-- Nível 1 - GOV.BR -->
+                    <div class="level-form active" id="level1">
+                        <div class="form-description">
+                            <p>Ou use sua conta do governo</p>
+                        </div>
+                        
+                        <form class="login-form">
+                            <div class="input-group">
+                                <label for="govbr-cpf">CPF</label>
+                                <input type="text" id="govbr-cpf" placeholder="000.000.000-00" maxlength="14">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="govbr-password">Senha</label>
+                                <div class="password-input">
+                                    <input type="password" id="govbr-password" placeholder="Digite sua senha">
+                                    <button type="button" class="password-toggle" onclick="togglePassword('govbr-password')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="forgot-password">
+                                <a href="#">Esqueceu sua senha?</a>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn level1-btn">
+                                <i class="fas fa-sign-in-alt"></i>
+                                ENTRAR
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Nível 2 - CPF -->
+                    <div class="level-form" id="level2">
+                        <div class="form-description">
+                            <p>Ou use sua conta com CPF</p>
+                        </div>
+                        
+                        <form class="login-form">
+                            <div class="input-group">
+                                <label for="cpf">CPF</label>
+                                <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="cpf-password">Senha</label>
+                                <div class="password-input">
+                                    <input type="password" id="cpf-password" placeholder="Digite sua senha">
+                                    <button type="button" class="password-toggle" onclick="togglePassword('cpf-password')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="forgot-password">
+                                <a href="#">Esqueceu sua senha?</a>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn level2-btn">
+                                <i class="fas fa-id-card"></i>
+                                ENTRAR
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Nível 3 - Redes Sociais -->
+                    <div class="level-form" id="level3">
+                        <div class="form-description">
+                            <p>Ou use suas redes sociais</p>
+                        </div>
+                        
+                        <!-- Botões Sociais -->
+                        <div class="social-login">
+                            <button type="button" class="social-btn google-btn">
+                                <i class="fab fa-google"></i>
+                            </button>
+                            <button type="button" class="social-btn facebook-btn">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button type="button" class="social-btn linkedin-btn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </button>
+                        </div>
+
+                        <div class="divider">
+                            <span>ou</span>
+                        </div>
+                        
+                        <form class="login-form">
+                            <div class="input-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="seu@email.com">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="email-password">Senha</label>
+                                <div class="password-input">
+                                    <input type="password" id="email-password" placeholder="Digite sua senha">
+                                    <button type="button" class="password-toggle" onclick="togglePassword('email-password')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="forgot-password">
+                                <a href="#">Esqueceu sua senha?</a>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn level3-btn">
+                                <i class="fas fa-envelope"></i>
+                                ENTRAR
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Área de Informações (Lado Direito) -->
+            <div class="info-section">
+                <!-- Conteúdo das Informações por Nível -->
+                
+                <!-- Info Nível 1 - GOV.BR -->
+                <div class="info-content active" id="info-level1">
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h2>Olá, cidadão!</h2>
+                        <p>Acesse com sua conta GOV.BR e tenha segurança máxima</p>
+                    </div>
+                    
+                    <div class="info-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Autenticação governamental oficial</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Máxima segurança e confiabilidade</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Acesso a todos os serviços públicos</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-action">
+                        <button class="register-btn">
+                            CADASTRAR-SE
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Info Nível 2 - CPF -->
+                <div class="info-content" id="info-level2">
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h2>Acesso Rápido!</h2>
+                        <p>Use seu CPF para acessar de forma simples e direta</p>
+                    </div>
+                    
+                    <div class="info-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Login rápido com CPF</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Processo simplificado</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Segurança garantida</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-action">
+                        <button class="register-btn">
+                            CADASTRAR-SE
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Info Nível 3 - Redes Sociais -->
+                <div class="info-content" id="info-level3">
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h2>Conecte-se!</h2>
+                        <p>Use suas redes sociais ou email para acesso instantâneo</p>
+                    </div>
+                    
+                    <div class="info-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Login com redes sociais</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Acesso instantâneo</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Múltiplas opções de entrada</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-action">
+                        <button class="register-btn">
+                            CADASTRAR-SE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

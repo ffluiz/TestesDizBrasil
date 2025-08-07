@@ -1,0 +1,540 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Card Principal */
+.login-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    min-height: 500px;
+    position: relative;
+}
+
+/* Seção de Login (Lado Esquerdo) */
+.login-section {
+    flex: 1;
+    padding: 40px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+/* Abas de Níveis */
+.level-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 30px;
+    background: #f8f9fa;
+    padding: 6px;
+    border-radius: 12px;
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.tab-btn.active {
+    background: #6366f1;
+    color: white;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.tab-btn:hover:not(.active) {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.tab-number {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: currentColor;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tab-btn:not(.active) .tab-number {
+    background: #dee2e6;
+    color: #6c757d;
+}
+
+.tab-text {
+    font-weight: 500;
+}
+
+/* Conteúdo dos Formulários */
+.form-content {
+    flex: 1;
+    position: relative;
+}
+
+.level-form {
+    display: none;
+    animation: fadeInSlide 0.3s ease;
+}
+
+.level-form.active {
+    display: block;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-description {
+    margin-bottom: 25px;
+}
+
+.form-description p {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Campos de Input */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    background: #ffffff;
+    color: #374151;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.input-group input::placeholder {
+    color: #9ca3af;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: #374151;
+}
+
+/* Link de senha esquecida */
+.forgot-password {
+    margin-bottom: 25px;
+    text-align: right;
+}
+
+.forgot-password a {
+    color: #6366f1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.forgot-password a:hover {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+
+/* Botões de Submit */
+.submit-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.level1-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.level1-btn:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.level2-btn {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+}
+
+.level2-btn:hover {
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.level3-btn {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    color: white;
+}
+
+.level3-btn:hover {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+/* Botões de Redes Sociais */
+.social-login {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.google-btn {
+    color: #db4437;
+}
+
+.google-btn:hover {
+    border-color: #db4437;
+    background: #db4437;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.facebook-btn {
+    color: #4267B2;
+}
+
+.facebook-btn:hover {
+    border-color: #4267B2;
+    background: #4267B2;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.linkedin-btn {
+    color: #0077b5;
+}
+
+.linkedin-btn:hover {
+    border-color: #0077b5;
+    background: #0077b5;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Divisor */
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.divider span {
+    background: white;
+    padding: 0 15px;
+    color: #6c757d;
+    font-size: 14px;
+    position: relative;
+}
+
+/* Seção de Informações (Lado Direito) */
+.info-section {
+    flex: 1;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.1;
+}
+
+.info-content {
+    display: none;
+    position: relative;
+    z-index: 1;
+    animation: fadeInSlide 0.3s ease;
+}
+
+.info-content.active {
+    display: block;
+}
+
+.info-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.info-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    backdrop-filter: blur(10px);
+}
+
+.info-icon i {
+    font-size: 32px;
+    color: white;
+}
+
+.info-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.info-header p {
+    font-size: 16px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* Lista de Features */
+.info-features {
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.feature-item i {
+    color: #10b981;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.feature-item span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Botão de Registro */
+.info-action {
+    text-align: center;
+}
+
+.register-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(10px);
+}
+
+.register-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+        margin: 10px;
+        border-radius: 16px;
+    }
+    
+    .login-section,
+    .info-section {
+        padding: 30px 20px;
+    }
+    
+    .login-header h1 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    
+    .level-tabs {
+        margin-bottom: 25px;
+    }
+    
+    .tab-btn {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+    
+    .tab-text {
+        display: none;
+    }
+    
+    .info-header h2 {
+        font-size: 24px;
+    }
+    
+    .info-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 16px;
+    }
+    
+    .info-icon i {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .login-section,
+    .info-section {
+        padding: 20px 15px;
+    }
+    
+    .social-login {
+        gap: 8px;
+    }
+    
+    .social-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
