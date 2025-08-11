@@ -23,16 +23,6 @@ loginOptions.forEach(option => {
         if (!isFormVisible()) {
             const benefitsId = hoverEffects[option.id];
             showBenefits(benefitsId);
-            
-            // Mudar cor de fundo do painel baseado no card
-            changePanelBackground(option.id);
-        }
-    });
-    
-    option.addEventListener('mouseleave', () => {
-        if (!isFormVisible()) {
-            // Resetar cor de fundo do painel quando sair do hover
-            resetPanelBackground();
         }
     });
 });
@@ -57,37 +47,6 @@ function showBenefits(benefitsId) {
     if (targetBenefits) {
         targetBenefits.classList.add('active');
     }
-}
-
-// Função para mudar cor de fundo do painel baseado no card
-function changePanelBackground(optionId) {
-    const panel = document.querySelector('.benefits-panel');
-    if (!panel) return;
-    
-    // Remove todas as classes de cor
-    panel.classList.remove('gov-br-active', 'cpf-active', 'email-social-active');
-    
-    // Adiciona a classe correspondente ao card
-    switch(optionId) {
-        case 'govBrOption':
-            panel.classList.add('gov-br-active');
-            break;
-        case 'cpfOption':
-            panel.classList.add('cpf-active');
-            break;
-        case 'emailSocialOption':
-            panel.classList.add('email-social-active');
-            break;
-    }
-}
-
-// Função para resetar cor de fundo do painel
-function resetPanelBackground() {
-    const panel = document.querySelector('.benefits-panel');
-    if (!panel) return;
-    
-    // Remove todas as classes de cor, voltando ao branco
-    panel.classList.remove('gov-br-active', 'cpf-active', 'email-social-active');
 }
 
 // Verificar se algum formulário está visível

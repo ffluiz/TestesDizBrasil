@@ -7,21 +7,11 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background: #266585; /* Fundo azul para contrastar com o container branco */
+    background: #ffffff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     color: #333;
-}
-
-/* Container Branco com Bordas Arredondadas */
-.content-wrapper {
-    background: #ffffff;
-    border-radius: 30px 30px 0 0; /* Bordas arredondadas apenas no topo */
-    margin-top: 0; /* Removido espaço para aproximar do header */
-    flex: 1;
-    padding: 15px 0 0 0; /* Reduzido de 30px para 15px */
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar */
 }
 
 /* Header */
@@ -29,7 +19,7 @@ body {
     text-align: center;
     padding: 10px 15px 15px;
     background: #266585;
-    /* border-bottom removida para eliminar a linha branca */
+    border-bottom: 1px solid #e1e8ed;
 }
 
 .logo {
@@ -53,88 +43,41 @@ body {
 .main-content {
     flex: 1;
     display: grid;
-    grid-template-columns: 2fr 320px 400px;
-    grid-template-rows: auto auto;
-    gap: 15px; /* TESTE: Aumente para 30px ou 35px se ainda houver sobreposição */
-    align-items: start;
-    padding: 15px 20px 20px 20px; /* Reduzido padding vertical */
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 40px 20px;
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
-}
-
-/* Posicionamento dos elementos no grid */
-.hero-section {
-    grid-column: 1;
-    grid-row: 1 / 3;
-    align-self: center;
-}
-
-.welcome-text {
-    grid-column: 2 / 4; /* Estende sobre as colunas 2 e 3 */
-    grid-row: 1;
-    text-align: left;
-    margin-bottom: 5px;
-    margin-right: 0px; /* Mantém sem margem negativa */
-    justify-self: start; /* Alinha à esquerda da área que ocupa */
-    padding-left: 0px; /* Padding para alinhamento fino se necessário */
-}
-
-.login-card {
-    grid-column: 2;
-    grid-row: 2;
-    align-self: start;
-    margin-right: 0px; /* Removendo margem excessiva que pode estar causando o problema */
-    justify-self: end;
-}
-
-.benefits-panel {
-    grid-column: 3;
-    grid-row: 2;
-    align-self: start;
-    margin-left: 0px; /* Equilibrando com a remoção da margem do login-card */
-    justify-self: start;
+    background: #ffffff;
 }
 
 /* Coluna 1: Hero Section (Ilustração + Módulos) */
 .hero-section {
     display: flex;
     flex-direction: column;
-    align-items: center; /* TESTE 1: Centraliza tudo primeiro */
-    gap: 20px; /* Aumentado para dar mais espaço */
-    padding: 15px 0 15px 15px; /* Padding reduzido à direita para mover para esquerda */
-}
-
-.hero-section .platform-modules {
-    align-self: center; /* Centraliza os módulos em relação à imagem */
-    text-align: center; /* Centraliza o conteúdo interno dos módulos */
-    width: 100%; /* Ocupa a mesma largura disponível da imagem */
-    position: relative;
-    left: 0; /* Remove qualquer deslocamento */
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
 }
 
 .hero-img {
-    max-width: 120%; /* Aumentado para ficar maior */
+    max-width: 100%;
     height: auto;
-    max-height: 400px; /* Aumentado de 300px para 400px */
+    max-height: 350px;
     object-fit: contain;
 }
 
 .platform-modules {
-    text-align: center; /* Centraliza os módulos */
-    width: 100%; /* Ocupa toda a largura disponível */
-    align-self: center; /* Centraliza em relação ao container pai */
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
+    text-align: center;
 }
 
 .modules-img {
-    max-width: 120%; /* Mesma proporção da imagem principal */
+    max-width: 100%;
     height: auto;
-    max-height: 120px; /* Aumentado de 100px para 140px */
+    max-height: 100px;
     object-fit: contain;
-    display: block; /* Garante que se comporte como bloco */
-    margin: 0 auto; /* Centraliza a imagem horizontalmente */
 }
 
 /* Coluna 2: Login Card (Centro) */
@@ -142,20 +85,7 @@ body {
     min-width: 280px;
     max-width: 320px;
     background: transparent;
-}
-
-.welcome-text h2 {
-    color: #266585;
-    font-size: 40px;
-    font-weight: 800;
-    margin-bottom: 8px;
-    line-height: 1.2;
-}
-
-.welcome-text p {
-    color: #666;
-    font-size: 16px;
-    font-weight: 400;
+    align-self: center;
 }
 
 /* Coluna 3: Benefits Panel (Direita) */
@@ -163,24 +93,10 @@ body {
     background: #ffffff;
     border-radius: 16px;
     border: 1px solid #e1e8ed;
-    padding: 25px;
-    height: 280px;
-    width: 400px;
-    position: relative;
-    transition: background-color 0.3s ease; /* Transição suave para mudança de cor */
-}
-
-/* Estados de cor do painel baseados nos cards */
-.benefits-panel.gov-br-active {
-    background: rgba(13, 115, 119, 0.05);
-}
-
-.benefits-panel.cpf-active {
-    background: rgba(102, 126, 234, 0.05);
-}
-
-.benefits-panel.email-social-active {
-    background: rgba(240, 147, 251, 0.05);
+    padding: 30px;
+    min-height: 300px;
+    max-width: 400px;
+    align-self: center;
 }
 
 .login-options {
@@ -188,11 +104,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 280px;
+    min-height: 300px;
 }
 
 .login-option {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     border: 1px solid #e1e8ed;
     border-left: 4px solid #e1e8ed;
     border-radius: 8px;
@@ -214,11 +130,10 @@ body {
 }
 
 .gov-br:hover {
-    border-color: #0d7377;
-    border-left-color: #0d7377;
-    box-shadow: 0 2px 12px rgba(13, 115, 119, 0.25);
-    background: rgba(13, 115, 119, 0.05);
-    transform: translateY(-1px); /* Adiciona transform consistente */
+    border-color: #ffd700;
+    border-left-color: #ffd700;
+    box-shadow: 0 2px 12px rgba(255, 215, 0, 0.25);
+    background: rgba(255, 215, 0, 0.02);
 }
 
 .cpf {
@@ -226,11 +141,10 @@ body {
 }
 
 .cpf:hover {
-    border-color: #667eea;
-    border-left-color: #667eea;
-    box-shadow: 0 2px 12px rgba(102, 126, 234, 0.25);
-    background: rgba(102, 126, 234, 0.05);
-    transform: translateY(-1px); /* Adiciona transform consistente */
+    border-color: #c0c0c0;
+    border-left-color: #c0c0c0;
+    box-shadow: 0 2px 12px rgba(192, 192, 192, 0.25);
+    background: rgba(192, 192, 192, 0.02);
 }
 
 .email-social {
@@ -238,11 +152,10 @@ body {
 }
 
 .email-social:hover {
-    border-color: #f093fb;
-    border-left-color: #f093fb;
-    box-shadow: 0 2px 12px rgba(240, 147, 251, 0.25);
-    background: rgba(240, 147, 251, 0.05);
-    transform: translateY(-1px); /* Mantém transform consistente */
+    border-color: #cd7f32;
+    border-left-color: #cd7f32;
+    box-shadow: 0 2px 12px rgba(205, 127, 50, 0.25);
+    background: rgba(205, 127, 50, 0.02);
 }
 
 .login-option:last-child {
@@ -312,9 +225,6 @@ body {
 
 .benefits-content {
     display: none;
-    height: 230px;
-    overflow: hidden;
-    padding-top: 5px;
 }
 
 .benefits-content.active {
@@ -325,7 +235,7 @@ body {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -337,8 +247,7 @@ body {
     font-size: 18px;
     font-weight: 600;
     color: #2c3e50;
-    margin-bottom: 5px;
-    margin-top: 0px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -351,50 +260,55 @@ body {
 .benefits-content li {
     padding: 8px 0;
     font-size: 14px;
-    color: hsl(211, 27%, 29%);
+    color: #495057;
     line-height: 1.5;
 }
 
 /* Footer */
 .footer {
-    background: #ffffff; /* Cinza claro */
-    border-top: none; /* Remove a borda */
-    padding: 8px 20px 12px; /* Padding compacto */
-    color: #333333; /* Texto escuro para contrastar com o fundo cinza claro */
+    background: #f8f9fa;
+    border-top: 1px solid #e1e8ed;
+    padding: 30px 20px 20px;
+}
+
+.platform-modules {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modules-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
 }
 
 .footer-content {
-    display: flex !important; /* Força a exibição */
-    justify-content: center;
-    align-items: center;
-    gap: 30px; /* Espaço entre copyright e links */
-    flex-wrap: wrap; /* Quebra em telas menores se necessário */
-    visibility: visible; /* Garante visibilidade */
+    text-align: center;
 }
 
 .footer-content p {
-    color: #333333; /* Texto escuro para contrastar com cinza claro */
+    color: #6c757d;
     font-size: 14px;
-    margin-bottom: 0; /* Remove margin para alinhar na mesma linha */
+    margin-bottom: 10px;
 }
 
 .footer-links {
-    display: flex !important; /* Força a exibição */
-    gap: 20px; /* Espaço entre os links */
-    visibility: visible; /* Garante visibilidade */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .footer-links a {
-    color: #266585 !important; /* Links azuis para combinar com o tema */
+    color: #667eea;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.3s ease;
-    display: inline-block; /* Garante que apareçam */
-    visibility: visible; /* Garante visibilidade */
 }
 
 .footer-links a:hover {
-    color: #1a4d66 !important; /* Azul mais escuro no hover */
+    color: #4c63d2;
 }
 
 /* Responsividade - Melhores Práticas */
@@ -500,61 +414,16 @@ body {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     width: 90%;
-    max-height: 85vh; /* Ajustado para evitar scroll */
-    overflow: hidden; /* Remove scroll */
+    max-height: 80vh;
+    overflow-y: auto;
     display: none;
-    padding: 25px; /* Padding reduzido */
-}
-
-/* Estilos específicos para o formulário GOV.BR */
-.govbr-icon-section {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.govbr-cpf-icon {
-    width: 48px;
-    height: 48px;
-    background: #1351b4; /* Cor azul do GOV.BR */
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-}
-
-.govbr-cpf-icon i {
-    color: white;
-    font-size: 20px;
-}
-
-.govbr-icon-section h3 {
-    color: #2c3e50;
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0;
-}
-
-.govbr-info-text {
-    margin-bottom: 25px;
-}
-
-.govbr-info-text p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.5;
-    text-align: left;
-}
-
-.govbr-info-text strong {
-    color: #1351b4; /* Cor azul do GOV.BR para destacar palavras */
 }
 
 .form-header {
     display: flex;
     align-items: center;
-    padding: 0 0 20px 0; /* Ajustado para o novo layout */
-    border-bottom: none; /* Removida a borda */
+    padding: 20px 30px;
+    border-bottom: 1px solid #e1e8ed;
 }
 
 .back-btn {
@@ -581,7 +450,7 @@ body {
 }
 
 .input-group {
-    margin-bottom: 15px; /* Margin reduzida para economizar espaço */
+    margin-bottom: 20px;
 }
 
 .input-group label {
@@ -589,12 +458,12 @@ body {
     font-size: 14px;
     font-weight: 500;
     color: #2c3e50;
-    margin-bottom: 6px; /* Margin reduzida */
+    margin-bottom: 8px;
 }
 
 .input-group input {
     width: 100%;
-    padding: 10px 14px; /* Padding reduzido */
+    padding: 12px 16px;
     border: 1px solid #e1e8ed;
     border-radius: 8px;
     font-size: 14px;
@@ -626,7 +495,7 @@ body {
 
 .submit-btn {
     width: 100%;
-    padding: 12px 18px; /* Padding reduzido */
+    padding: 14px 20px;
     border: none;
     border-radius: 8px;
     font-size: 16px;
@@ -637,19 +506,17 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 15px; /* Margin reduzida */
+    margin-bottom: 20px;
 }
 
 .govbr-btn {
-    background: #1351b4; /* Cor oficial do GOV.BR */
+    background: linear-gradient(135deg, #0d7377 0%, #14a085 100%);
     color: white;
-    border: none;
 }
 
 .govbr-btn:hover {
-    background: #0f3f8a; /* Tom mais escuro no hover */
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(19, 81, 180, 0.3);
+    box-shadow: 0 4px 20px rgba(13, 115, 119, 0.3);
 }
 
 .cpf-btn {
@@ -689,12 +556,12 @@ body {
 }
 
 .social-buttons {
-    padding: 0 0 15px 0; /* Padding reduzido */
+    padding: 20px 30px 0;
 }
 
 .social-btn {
     width: 100%;
-    padding: 10px 16px; /* Padding reduzido */
+    padding: 12px 20px;
     border: 1px solid #e1e8ed;
     border-radius: 8px;
     background: #ffffff;
@@ -707,29 +574,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 8px; /* Margin reduzida */
-}
-
-/* Estilos específicos para formulário email compacto */
-.email-form-compact {
-    margin-top: 0;
-}
-
-.email-form-compact .input-group {
-    margin-bottom: 15px; /* Margin reduzida */
-}
-
-.email-form-compact .submit-btn {
-    margin-bottom: 15px; /* Margin reduzida */
-}
-
-.email-form-compact .form-links {
-    margin-top: 0;
-}
-
-.email-form-compact .form-links a {
-    margin: 0 8px; /* Margin reduzida */
-    font-size: 13px; /* Fonte um pouco menor */
+    margin-bottom: 12px;
 }
 
 .social-btn:hover {
@@ -747,14 +592,14 @@ body {
     color: #3b5998;
 }
 
-.apple-btn:hover {
-    border-color: #000000;
-    color: #000000;
+.microsoft-btn:hover {
+    border-color: #00a1f1;
+    color: #00a1f1;
 }
 
 .divider {
     text-align: center;
-    margin: 15px 0; /* Margin reduzida */
+    margin: 20px 0;
     position: relative;
 }
 

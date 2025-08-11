@@ -1,0 +1,535 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    background: #ffffff;
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.logo-img {
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+}
+
+.subtitle {
+    color: #6c757d;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0 0 0;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Hero Section (Ilustração à Esquerda) */
+.hero-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* Login Card (à Direita) */
+.login-card {
+    flex: 1;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    border: 1px solid #e1e8ed;
+    overflow: hidden;
+}
+
+.login-options {
+    padding: 30px;
+}
+
+.login-option {
+    margin-bottom: 16px;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.login-option:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Efeitos de Brilho Específicos */
+.gov-br:hover {
+    border-color: #ffd700;
+    box-shadow: 0 4px 25px rgba(255, 215, 0, 0.4), 
+                0 0 15px rgba(255, 215, 0, 0.3),
+                inset 0 1px 0 rgba(255, 215, 0, 0.2);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.cpf:hover {
+    border-color: #c0c0c0;
+    box-shadow: 0 4px 25px rgba(192, 192, 192, 0.4), 
+                0 0 15px rgba(192, 192, 192, 0.3),
+                inset 0 1px 0 rgba(192, 192, 192, 0.2);
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.email-social:hover {
+    border-color: #cd7f32;
+    box-shadow: 0 4px 25px rgba(205, 127, 50, 0.4), 
+                0 0 15px rgba(205, 127, 50, 0.3),
+                inset 0 1px 0 rgba(205, 127, 50, 0.2);
+    background: linear-gradient(135deg, rgba(205, 127, 50, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.login-option:last-child {
+    margin-bottom: 0;
+}
+
+.option-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.option-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.gov-br .option-icon {
+    background: linear-gradient(135deg, #0d7377 0%, #14a085 100%);
+}
+
+.cpf .option-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.email-social .option-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.option-icon i {
+    color: white;
+    font-size: 20px;
+}
+
+.govbr-logo {
+    width: 28px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.option-content {
+    flex: 1;
+}
+
+.option-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 4px 0;
+}
+
+.option-content p {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.option-arrow {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Painel de Benefícios */
+.benefits-panel {
+    background: #f8f9fa;
+    border-top: 1px solid #e1e8ed;
+    padding: 30px;
+    min-height: 200px;
+}
+
+.benefits-content {
+    display: none;
+}
+
+.benefits-content.active {
+    display: block;
+    animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.benefits-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.benefits-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-content li {
+    padding: 8px 0;
+    font-size: 14px;
+    color: #495057;
+    line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+    background: #ffffff;
+    border-top: 1px solid #e1e8ed;
+    padding: 30px 20px 20px;
+}
+
+.platform-modules {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modules-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content p {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #667eea;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #4c63d2;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+    
+    .hero-section {
+        order: 2;
+    }
+    
+    .login-card {
+        order: 1;
+        max-width: 100%;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Formulários (mantidos para compatibilidade) */
+.forms-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: none;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #667eea;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #f8f9fa;
+}
+
+.form-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.govbr-btn {
+    background: linear-gradient(135deg, #0d7377 0%, #14a085 100%);
+    color: white;
+}
+
+.govbr-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(13, 115, 119, 0.3);
+}
+
+.cpf-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.cpf-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+}
+
+.email-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.email-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(240, 147, 251, 0.3);
+}
+
+.form-links {
+    text-align: center;
+}
+
+.form-links a {
+    color: #667eea;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.form-links a:hover {
+    color: #4c63d2;
+}
+
+.social-buttons {
+    padding: 20px 30px 0;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #2c3e50;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.social-btn:hover {
+    border-color: #667eea;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.1);
+}
+
+.google-btn:hover {
+    border-color: #db4437;
+    color: #db4437;
+}
+
+.facebook-btn:hover {
+    border-color: #3b5998;
+    color: #3b5998;
+}
+
+.microsoft-btn:hover {
+    border-color: #00a1f1;
+    color: #00a1f1;
+}
+
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e1e8ed;
+}
+
+.divider span {
+    background: #ffffff;
+    padding: 0 15px;
+    color: #6c757d;
+    font-size: 14px;
+}

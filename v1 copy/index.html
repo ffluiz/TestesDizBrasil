@@ -14,25 +14,18 @@
         <div class="logo">
             <img src="logo-dizbrasil.svg" alt="Diz Brasil" class="logo-img">
         </div>
+        <p class="subtitle">Seja bem vindo. Juntos nossa voz é mais forte!
     </header>
 
-    <!-- Container Branco com Bordas Arredondadas -->
-    <div class="content-wrapper">
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Coluna 1: Ilustração + Módulos -->
-            <div class="hero-section">
-                <img src="Logo_Pessoas_DizBrasil.png" alt="Pessoas participando" class="hero-img">
-                <!-- Módulos da Plataforma -->
-                <div class="platform-modules">
-                    <img src="apps_dizbrasil.png" alt="Módulos Diz Brasil" class="modules-img">
-                </div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Coluna 1: Ilustração + Módulos -->
+        <div class="hero-section">
+            <img src="Logo_Pessoas_DizBrasil.png" alt="Pessoas participando" class="hero-img">
+            <!-- Módulos da Plataforma -->
+            <div class="platform-modules">
+                <img src="apps_dizbrasil.png" alt="Módulos Diz Brasil" class="modules-img">
             </div>
-
-        <!-- Texto de Boas-vindas (sobre as colunas 2 e 3) -->
-        <div class="welcome-text">
-            <h2>Seja Bem-Vindo.<br>Juntos nossa voz é mais forte!</h2>
-            <p>Escolha a melhor forma de entrar e aproveite todos os benefícios</p>
         </div>
 
         <!-- Coluna 2: Card de Login -->
@@ -92,24 +85,25 @@
         <div class="benefits-panel" id="benefitsPanel">
             <!-- Benefícios GOV.BR -->
             <div class="benefits-content gov-br-benefits" id="govBrBenefits">
-                <h3>Acesse todos os recursos!</h3>
+                <h3>Tenha acesso a Todos os Recursos da Plataforma de Graça</h3>
                 <ul>
-                    <li>✓ Ganhe criptomoeda <strong>MPBIT</strong> por interação</li>
-                    <li>✓ Acesso a todos os Posts Estruturados + Enquete + Petição</li>
-                    <li>✓ Crie comunidades publicas e privadas com seus amigos</li>
-                    <li>✓ Participação em Enquetes Oficiais + MPBIT</li>
-                    <li>✓ Autenticação oficial e segurança máxima</li>
+                    <li>✓ Ganhe criptomoeda <strong>MPBIT</strong> por cada interação</li>
+                    <li>✓ Acesso direto aos serviços governamentais</li>
+                    <li>✓ Autenticação oficial do governo</li>
+                    <li>✓ Segurança máxima com dados oficiais</li>
+                    <li>✓ Participação em consultas públicas oficiais</li>
                 </ul>
             </div>
 
             <!-- Benefícios CPF -->
             <div class="benefits-content cpf-benefits" id="cpfBenefits">
-                <h3>Acesso Simplificado</h3>
+                <h3>Acesso Simplificado com Máxima Segurança</h3>
                 <ul>
-                    <li>✓ Acesso aos Posts Estruturados + Enquete</li>
+                    <li>✓ Ganhe criptomoeda <strong>MPBIT</strong> por cada interação</li>
                     <li>✓ Verificação rápida com documento oficial</li>
                     <li>✓ Maior Confiabilidade nas interações</li>
-                    <li>✓ Votar em enquetes</li>
+                    <li>✓ Criar Posts Estruturados</li>
+                    <li>✓ Votar em todas as enquetes</li>
                 </ul>
             </div>
 
@@ -117,15 +111,15 @@
             <div class="benefits-content email-benefits" id="emailBenefits">
                 <h3>Conecte-se de Forma Flexível</h3>
                 <ul>
+                    <li>✓ Ganhe criptomoeda <strong>MPBIT</strong> por cada interação</li>
                     <li>✓ Login rápido com redes sociais</li>
-                    <li>✓ Integração com Google, Facebook e Apple</li>
+                    <li>✓ Integração com Google, Facebook e Microsoft</li>
                     <li>✓ Denúncia e propostas com mais peso</li>
                     <li>✓ Compartilhamento fácil nas redes</li>
                 </ul>
             </div>
         </div>
     </main>
-    </div> <!-- Fim do content-wrapper -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -148,30 +142,30 @@
                 <button class="back-btn" onclick="showOptions()">
                     <i class="fas fa-arrow-left"></i>
                 </button>
-                <h2>Identifique-se no gov.br com:</h2>
+                <h2>Login GOV.BR</h2>
             </div>
             <form>
-                <!-- Ícone CPF -->
-                <div class="govbr-icon-section">
-                    <div class="govbr-cpf-icon">
-                        <i class="fas fa-id-card"></i>
-                    </div>
-                    <h3>Número do CPF</h3>
-                </div>
-                
-                <!-- Texto informativo -->
-                <div class="govbr-info-text">
-                    <p>Digite seu CPF para <strong>criar</strong> ou <strong>acessar</strong> sua conta gov.br</p>
-                </div>
-                
                 <div class="input-group">
                     <label for="govbr-cpf">CPF</label>
-                    <input type="text" id="govbr-cpf" placeholder="Digite seu CPF" maxlength="14">
+                    <input type="text" id="govbr-cpf" placeholder="000.000.000-00" maxlength="14">
                 </div>
-                
+                <div class="input-group">
+                    <label for="govbr-password">Senha</label>
+                    <div class="password-input">
+                        <input type="password" id="govbr-password" placeholder="Digite sua senha">
+                        <button type="button" class="password-toggle" onclick="togglePassword('govbr-password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
                 <button type="submit" class="submit-btn govbr-btn">
-                    Continuar
+                    <i class="fas fa-sign-in-alt"></i>
+                    Entrar com GOV.BR
                 </button>
+                <div class="form-links">
+                    <a href="#" class="forgot-password">Esqueci minha senha</a>
+                    <a href="#" class="create-account">Criar conta GOV.BR</a>
+                </div>
             </form>
         </div>
 
@@ -227,9 +221,9 @@
                     <i class="fab fa-facebook-f"></i>
                     Continuar com Facebook
                 </button>
-                <button type="button" class="social-btn apple-btn">
-                    <i class="fab fa-apple"></i>
-                    Continuar com Apple
+                <button type="button" class="social-btn microsoft-btn">
+                    <i class="fab fa-microsoft"></i>
+                    Continuar com Microsoft
                 </button>
             </div>
 
@@ -237,8 +231,8 @@
                 <span>ou</span>
             </div>
 
-            <!-- Formulário Email Compacto -->
-            <form class="email-form-compact">
+            <!-- Formulário Email -->
+            <form>
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" placeholder="seu@email.com">
